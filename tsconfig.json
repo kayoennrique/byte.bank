@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "outDir": "dist/js",
+        "target": "ES2016",
+        "noEmitOnError": true
+    },
+    "include": ["./src/**/*"]
+}

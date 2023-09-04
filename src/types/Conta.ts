@@ -3,7 +3,7 @@ import { TipoTransacao } from "./TipoTransacao.js";
 import { GrupoTransacao } from "./GrupoTransacao.js";
 
 let saldo: number = JSON.parse(localStorage.getItem("saldo")) || 0;
-const transacoes: Transacao[] = JSON.parse(localStorage.getItem("transacoes"),(key: string, value: string) => {
+const transacoes: Transacao[] = JSON.parse(localStorage.getItem("transacoes"), (key: string, value: string) => {
     if (key === "data") {
         return new Date(value);
     }
@@ -12,24 +12,26 @@ const transacoes: Transacao[] = JSON.parse(localStorage.getItem("transacoes"),(k
 }) || [];
 
 
-function debitar (valor: number): void {
+function debitar(valor: number): void {
     if (valor <= 0) {
-        throw new Error ("O valor a ser debitado deve ser maior que zero!");
+        throw new Error("O valor a ser debitado deve ser maior que zero!");
     }
     if (valor >= saldo) {
-        throw new Error ("Saldo insuficiente!");
+        throw new Error("Saldo insuficiente!");
     }
-    saldo -+ valor;
+    saldo -= valor;
     localStorage.setItem("saldo", saldo.toString());
 }
 
 function depositar(valor: number): void {
     if (valor <= 0) {
-        throw new Error ("O valor a ser debitado deve ser maior que zero!");
+        throw new Error("O valor a ser debitado deve ser maior que zero!");
     }
     saldo += valor;
     localStorage.setItem("saldo", saldo.toString());
 }
+
+
 const Conta = {
     getSaldo() {
         return saldo;
@@ -58,6 +60,7 @@ const Conta = {
         }
 
         return gruposTransacoes;
+
     },
 
 
@@ -66,15 +69,16 @@ const Conta = {
             depositar(novaTransacao.valor);
         } else if (novaTransacao.tipoTransacao == TipoTransacao.TRANSFERENCIA || novaTransacao.tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
             debitar(novaTransacao.valor);
-        } else {
-            throw new Error ("Tipo de Transação é inválido!");
-            
+            novaTransacao.valor *= -1;
+        }
+        else {
+            throw new Error("Tipo de Transação é inválido!");
         }
 
         transacoes.push(novaTransacao);
-        console.log(this.getGruposTransacoes());
         localStorage.setItem("transacoes", JSON.stringify(transacoes));
     }
 }
 
 export default Conta;
+

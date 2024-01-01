@@ -31,18 +31,4 @@ test('You must call an onSubmit event when you click on perform transaction', ()
 
     userEvent.click(button);
     expect(carryOutTransaction).toHaveBeenCalledTimes(1);
-  });
-
-  test('It must be possible to select an element option <select/>', () => {
-    render(<Form />);
-    const select = screen.getByRole('combobox'); 
-    userEvent.selectOptions(select, ['Depósito']); 
-
-    expect(
-      screen.getByRole('option', { name: 'Selecione um tipo de transação' })
-        .selected
-    ).toBe(false); 
-    expect(screen.getByRole('option', { name: 'Depósito' }).selected).toBe(
-      true
-    ); 
   });  

@@ -11,7 +11,7 @@ export default function Balance({ balance }) {
       </div>
       <div className={styles.divisor} />
       <p className={styles.account}>Conta corrente</p>
-      <p className={styles.value}>{`R$ ${balance}`}</p>
+      <p className={styles.amount}>{`R$ ${balance}`}</p>
     </div>
   );
 }

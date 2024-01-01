@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styles from './Form.module.css';
 
-export default function Formulario({ carryOutTransaction }) {
-  const [value, setValue] = useState({ transacao: '', valor: '' });
+export default function Form({ carryOutTransaction }) {
+  const [amount, setAmount] = useState({ transaction: '', amount: '' });
 
   function handleChange(e) {
     const { name, value } = e.target;
-    const valuesUpdated = { ...value, [name]: value };
-    setValue(valuesUpdated);
+    const valuesUpdated = { ...amount, [name]: value };
+    setAmount(valuesUpdated);
   }
 
   function handleSubmit(e) {
@@ -17,11 +17,11 @@ export default function Formulario({ carryOutTransaction }) {
       month: 'long',
     });
     carryOutTransaction({
-      ...value,
+      ...amount,
       data: dateTransaction,
       month: monthTransaction[0].toUpperCase() + monthTransaction.substring(1),
     });
-    setValue({ ...value, value: '' });
+    setAmount({ ...amount, amount: '' });
   }
 
   return (
@@ -31,7 +31,7 @@ export default function Formulario({ carryOutTransaction }) {
         className={styles.group__options}
         onChange={handleChange}
         name="transaction"
-        data-testid="select-optins"
+        data-testid="select-options"
       >
         <option defaultValue="Selecione um tipo de transação">
           Selecione um tipo de transação
@@ -39,16 +39,16 @@ export default function Formulario({ carryOutTransaction }) {
         <option value="Depósito">Depósito</option>
         <option value="Transferência">Transferência</option>
       </select>
-      <label htmlFor="value" className={styles.subtitle}>
+      <label htmlFor="amount" className={styles.subtitle}>
         Valor
       </label>
       <input
         onChange={handleChange}
         className={styles.field__value}
         type="number"
-        value={value.value}
-        name="value"
-        id="value"
+        value={amount.amount}
+        name="amount"
+        id="amount"
         placeholder="Digite um valor"
       />
       <button className={styles.button} type="submit">

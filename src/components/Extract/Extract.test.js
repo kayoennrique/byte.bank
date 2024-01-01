@@ -5,7 +5,7 @@ test('Should render a list of transactions', () => {
     const transactions = [
         {
             transaction: 'Depósito',
-            value: 100,
+            amount: 100,
         },
     ];
 

@@ -11,13 +11,13 @@ export default function Transactions({ transaction, styles }) {
       {transaction.transaction === 'Transferência' ? (
         <h3
           data-testid="valueTransaction"
-          className={styles.value}
-        >{`- R$ ${transaction.value}`}</h3>
+          className={styles.amount}
+        >{`- R$ ${transaction.amount}`}</h3>
       ) : (
         <h3
           data-testid="valueTransaction"
-          className={styles.value}
-        >{` R$ ${transaction.value}`}</h3>
+          className={styles.amount}
+        >{` R$ ${transaction.amount}`}</h3>
       )}
       <div className={styles.divisor} />
     </li>

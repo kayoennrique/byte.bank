@@ -5,7 +5,7 @@ import styles from '../Extract.module.css';
 test('Must render the same component with updated props', () => {
     const transaction = {
       transaction: 'Depósito',
-      value: 100,
+      amount: 100,
     };
     const { rerender } = render(
       <Transactions styles={styles} transaction={transaction} />
@@ -18,7 +18,7 @@ test('Must render the same component with updated props', () => {
   
     const newTransaction = {
       transaction: 'Transferência',
-      value: 50,
+      amount: 50,
     };
   
     rerender(<Transactions styles={styles} transaction={newTransaction} />);

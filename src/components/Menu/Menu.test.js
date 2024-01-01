@@ -19,3 +19,9 @@ test('Should not render the link to Extract', () => {
   expect(linkExtract).not.toBeInTheDocument();
 });
 
+test('It should render a list of links and with the link class', () => {
+    render(<Menu />);
+    const links = screen.getAllByRole('link');
+    links.forEach((link) => expect(link).toHaveClass('link'));
+    expect(links).toMatchSnapshot();
+});

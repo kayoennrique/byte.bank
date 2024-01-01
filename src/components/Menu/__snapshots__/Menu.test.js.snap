@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should render a list of links and with the link class 1`] = `
+Array [
+  <a
+    class="link"
+    href="/"
+  >
+    Inicial
+  </a>,
+  <a
+    class="link"
+    href="/"
+  >
+    Transferências
+  </a>,
+  <a
+    class="link"
+    href="/"
+  >
+    Investments
+  </a>,
+  <a
+    class="link"
+    href="/"
+  >
+    Outros serviços
+  </a>,
+]
+`;

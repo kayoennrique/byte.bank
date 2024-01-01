@@ -47,8 +47,8 @@ export default function Formulario({ carryOutTransaction }) {
         className={styles.field__value}
         type="number"
         value={value.value}
-        name="valor"
-        id="valor"
+        name="value"
+        id="value"
         placeholder="Digite um valor"
       />
       <button className={styles.button} type="submit">

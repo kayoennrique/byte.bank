@@ -8,7 +8,7 @@ export default function Transactions({ transaction, styles }) {
         <p data-testid="typeTransaction">{transaction.transaction}</p>
         <span>{transaction.data}</span>
       </div>
-      {transaction.transaction === 'Transfer' ? (
+      {transaction.transaction === 'Transferência' ? (
         <h3
           data-testid="valueTransaction"
           className={styles.value}

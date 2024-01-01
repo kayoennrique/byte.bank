@@ -5,4 +5,4 @@ test("Should render the logged in user name", ()=>{
     render(<Header/>)
     const nameUser = screen.getByText('Kayo Ennrique')
     expect(nameUser). toBeInTheDocument();
-})
+});

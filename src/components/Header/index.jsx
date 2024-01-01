@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Header.module.css";
-import { ReactComponent as Logo } from "./bytebank.svg";
-import avatarUser from "./avatar.svg";
+import React from 'react';
+import styles from './Header.module.css';
+import { ReactComponent as Logo } from './bytebank.svg';
+import avatarUser from './avatar.svg';
 
 export default function Header() {
   return (

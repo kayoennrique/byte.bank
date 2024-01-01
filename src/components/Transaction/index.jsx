@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Transaction.module.css';
-import { ReactComponent as Ilustracao } from './ilustration.svg';
+import { ReactComponent as Illustration } from './ilustration.svg';
 import Form from './Form';
 
 export default function Transaction({ carryOutTransaction }) {
@@ -10,7 +10,7 @@ export default function Transaction({ carryOutTransaction }) {
       <div className={styles.wrapper}>
         <Form carryOutTransaction={carryOutTransaction} />
       </div>
-      <Ilustracao height="229" width="359" />
+      <Illustration height="229" width="359" />
       <div className={styles.detail__bottom} />
     </section>
   );

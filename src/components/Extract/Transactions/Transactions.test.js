@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Transactions from './index';
 import styles from '../Extract.module.css';
 
-test('Must render the same component with updated props', () => {
+it('Must render the same component with updated props', () => {
     const transaction = {
       transaction: 'Depósito',
       amount: 100,

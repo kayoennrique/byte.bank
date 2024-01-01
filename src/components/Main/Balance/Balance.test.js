@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Balance from './index';
 
 describe('Component <Balance />', () => {
-  test('Must render balance with monetary value', () => {
+  it('Must render balance with monetary value', () => {
     render(<Balance balance={1000} />);
 
     const balance = screen.getByTestId('balance');

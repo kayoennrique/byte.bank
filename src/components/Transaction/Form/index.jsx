@@ -52,9 +52,14 @@ export default function Form({ carryOutTransaction }) {
           value={amount.amount}
           name="amount"
           id="amount"
+          data-test="form-input"
           placeholder="Digite um valor"
         />
-        <button className={styles.button} type="submit">
+        <button
+          className={styles.button}
+          type="submit"
+          data-test="perform-transaction"
+        >
           Realizar transação
         </button>
       </div>

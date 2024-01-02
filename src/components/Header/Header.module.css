@@ -1,6 +1,7 @@
 .header {
   background-color: #111111;
-  height: 76px;
+  width: 100%;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +11,16 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  width: 1199px;
+  align-items: center;
+  min-width: 1199px;
+  z-index: 10;
+}
+
+.buttons {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .user {
@@ -18,15 +28,78 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 16px;
+}
+
+.user__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 282px;
 }
 
 p {
   color: #31b237;
   font-size: 14px;
-  margin-right: 1.5rem;
 }
 
 img {
   height: 40px;
   width: 40px;
+}
+
+.hamburguerIcon {
+  display: none;
+}
+
+@media (max-width: 425px) {
+  .container {
+    min-width: 90%;
+  }
+
+  .user {
+    width: 50%;
+    align-items: center;
+  }
+
+  .buttons {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  .user__info {
+    display: none;
+  }
+
+  .hamburguerIcon {
+    display: flex;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    min-width: 90%;
+  }
+
+  .buttons {
+    width: 60%;
+    gap: 16px;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    min-width: 90%;
+  }
+
+  .buttons {
+    width: 60%;
+    gap: 16px;
+    justify-content: flex-end;
+  }
 }

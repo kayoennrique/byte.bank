@@ -8,7 +8,7 @@ export default function Cards() {
     <section className="container">
       <div className="top__detail" />
       <div className={styles.wrapper}>
-        <h2>Meus cartões</h2>
+      <h2 data-test='title-cards'>Meus cartões</h2>
         <p>Cartão físico</p>
         <div className={styles.card}>
           <img src={physicalCard} alt="Cartão físico" />

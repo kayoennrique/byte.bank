@@ -1,18 +1,13 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { calculateNewBalance } from '../../utils';
-import { saveTransaction } from '../../services/transactions';
-import { updateBalance } from '../../services/balance';
-import useListTransactions from '../../hooks/useListTransactions';
-import useBalance from '../../hooks/useBalance';
+import { Extract, Menu, Main, Transaction } from 'components';
+import { calculateNewBalance } from 'utils';
+import { saveTransaction } from 'services/transactions';
+import { updateBalance } from 'services/balance';
+import useListTransactions from 'hooks/useListTransactions';
+import useBalance from 'hooks/useBalance';
 import styles from './App.module.css';
 
-import Header from '../../components/Header';
-import Extract from '../../components/Extract';
-import Menu from '../../components/Menu';
-import Main from '../../components/Main';
-import Transaction from '../../components/Transaction';
-
-export default function App() {
+export default function Home() {
   const [balance, setBalance] = useBalance();
   const [transactions, setTransactions] = useListTransactions();
   const location = useLocation();
@@ -27,16 +22,15 @@ export default function App() {
 
   return (
     <>
-      <Header />
-      <main className={styles.box}>
+      <main data-test="app-home" className={styles.box}>
         <Menu path={location.pathname} />
         <div className={styles.envelope}>
           <Main balance={balance} />
-          {location.pathname === '/' && (
+          {location.pathname === '/home' && (
             <Transaction carryOutTransaction={carryOutTransaction} />
           )}
           <Outlet />
-          <noscript data-testid = "local">{location.pathname}</noscript>
+          <noscript data-testid="local">{location.pathname}</noscript>
         </div>
         <Extract transactions={transactions} />
       </main>

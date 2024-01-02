@@ -14,7 +14,7 @@
 .title {
   font-weight: 500;
   color: #f7f7f7;
-  font-size: 25px;
+  font-size: 32px;
 }
 
 .data {
@@ -55,4 +55,32 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+@media (max-width: 425px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .wrapper {
+    flex-direction: column-reverse;
+    height: 70%;
+  }
+
+  .wrapper > svg {
+    width: 280px;
+    height: 225px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
 }

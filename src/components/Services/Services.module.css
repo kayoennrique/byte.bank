@@ -55,3 +55,56 @@
   bottom: 0;
   left: 0;
 }
+
+@media (max-width: 425px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .services {
+    padding: 6px;
+    min-width: 146px;
+    min-height: 30px;
+  }
+
+  .services h5 {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .services {
+    padding: 6px;
+    min-width: 132px;
+    min-height: 107px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .services {
+    padding: 6px;
+    min-width: 132px;
+    min-height: 107px;
+  }
+}
+

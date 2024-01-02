@@ -7,7 +7,7 @@ ul {
   border-radius: 8px;
   padding: 24px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 282px;
+  min-width: 282px;
   overflow: auto;
 }
 
@@ -48,7 +48,7 @@ ul {
   font-size: 12px;
 }
 
-.value {
+.amount {
   font-size: 16px;
   font-weight: 700;
   color: #000000;
@@ -59,4 +59,25 @@ ul {
   height: 1px;
   background-color: rgba(71, 161, 56, 0.5);
   margin: 0.8rem auto;
+}
+
+@media (max-width: 425px) {
+  .container {
+    margin-top: 1rem;
+    width: 90%;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    margin-top: 1rem;
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    min-width: 182px;
+    width: 100%;
+  }
 }

@@ -6,7 +6,7 @@ export default function Extract({ transactions }) {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Extrato</h2>
-      <ul data-testid="transaction-list">
+      <ul data-testid="transaction-list" data-test="transaction-list">
         {transactions.map((transaction, index) => {
           return (
             <Transactions

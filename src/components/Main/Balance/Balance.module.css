@@ -39,3 +39,10 @@
   margin: 1rem 0;
   color: #f7f7f7;
 }
+
+@media (max-width: 425px) {
+  .container {
+    width: 95%;
+    height: 180px;
+  }
+}

@@ -1,3 +1,26 @@
+html {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #e3f9e5;
+}
+
+.page-content {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   background-color: #cbcbcb;
   border-radius: 8px;
@@ -33,4 +56,22 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+@media (max-width: 425px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
 }

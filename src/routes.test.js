@@ -4,51 +4,51 @@ import App from './pages/Main/App';
 import AppRoutes from './routes';
 import Cards from './components/Cards';
 
-describe('Rotas', () => {
-  test('Deve renderizar a rota principal', () => {
+describe('Routes', () => {
+  it('Deve renderizar a rota principal', () => {
     render(<App />, { wrapper: BrowserRouter });
-    const usuario = screen.getByText('Olá, Joana :)!');
-    expect(usuario).toBeInTheDocument();
+    const user = screen.getByText('Olá, Kayo :)!');
+    expect(user).toBeInTheDocument();
   });
 
-  test('Deve renderizar a rota Cartões', () => {
-    const rota = '/cartoes';
+  it('Should render the Cards route', () => {
+    const route = '/cards';
     render(
-      <MemoryRouter initialEntries={[rota]}>
+      <MemoryRouter initialEntries={[route]}>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route path="cartoes" element={<Cartoes />} />
+            <Route path="cards" element={<Cards />} />
           </Route>
         </Routes>
       </MemoryRouter>
     );
 
-    const meusCartoes = screen.getByText('Meus cartões');
-    expect(meusCartoes).toHaveTextContent('Meus cartões');
+    const myCards = screen.getByText('Meus cartões');
+    expect(myCards).toHaveTextContent('Meus cartões');
   });
 
-  test('Deve renderizar a localização da rota atual', () => {
-    const rota = '/cartoes';
+  it('Should render current route location', () => {
+    const route = '/cards';
     render(
-      <MemoryRouter initialEntries={[rota]}>
+      <MemoryRouter initialEntries={[route]}>
         <App />
       </MemoryRouter>
     );
 
-    const localizacaoAtual = screen.getByTestId('local');
-    expect(localizacaoAtual).toHaveTextContent(rota);
+    const currentLocation = screen.getByTestId('local');
+    expect(currentLocation).toHaveTextContent(route);
   });
 
-  test('Deve renderizar a página 404', () => {
-    const rota = '/extrato';
+  it('Should render 404 page', () => {
+    const route = '/extract';
 
     render(
-      <MemoryRouter initialEntries={[rota]}>
+      <MemoryRouter initialEntries={[route]}>
         <AppRoutes />
       </MemoryRouter>
     );
 
-    const paginaErro = screen.getByTestId('pagina-404');
-    expect(paginaErro).toContainHTML('<h1>Ops! Não encontramos a página</h1>');
+    const pageErro = screen.getByTestId('page-404');
+    expect(pageErro).toContainHTML('<h1>Ops! Não encontramos a página</h1>');
   });
 });

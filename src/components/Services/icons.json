@@ -1,0 +1,26 @@
+[
+  {
+    "service": "Empréstimo",
+    "image": "/images/icons/emprestimo.svg"
+  },
+  {
+    "service": "Meus cartões",
+    "image": "/images/icons/cartao.svg"
+  },
+  {
+    "service": "Doações",
+    "image": "/images/icons/doacao.svg"
+  },
+  {
+    "service": "Pix",
+    "image": "/images/icons/pix.svg"
+  },
+  {
+    "service": "Seguros",
+    "image": "/images/icons/seguro.svg"
+  },
+  {
+    "service": "Recarga celular",
+    "image": "/images/icons/recarga.svg"
+  }
+]

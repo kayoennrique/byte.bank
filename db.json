@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "transaction": "Depósito",
+      "amount": "150",
+      "data": "18/11/2022",
+      "mont": "Novembro",
+      "id": 1
+    },
+    {
+      "transaction": "Depósito",
+      "amount": "100",
+      "data": "21/11/2022",
+      "mont": "Novembro",
+      "id": 2
+    },
+    {
+      "transaction": "Depósito",
+      "amount": "102",
+      "data": "22/11/2022",
+      "mont": "Novembro",
+      "id": 3
+    }
+  ],
+  "balance": {
+    "amount": 2000
+  }
+}

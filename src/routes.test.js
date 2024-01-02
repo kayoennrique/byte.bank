@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter, MemoryRouter, Routes, Route } from 'react-router-dom';
 import App from './pages/main/App';
+import AppRoutes from './routes';
 import Cards from './components/Cards';
 
 describe('Routes', () => {
@@ -26,15 +27,16 @@ describe('Routes', () => {
     expect(myCards).toHaveTextContent('Meus cartões');
   });
 
-  it('Should render current route location', () => {
-    const route = '/cards';
+  it('Should render 404 page', () => {
+    const route = '/extract';
+
     render(
       <MemoryRouter initialEntries={[route]}>
-        <App />
+        <AppRoutes />
       </MemoryRouter>
     );
 
-    const currentLocation = screen.getByTestId('local');
-    expect(currentLocation).toHaveTextContent(route);
+    const pageErro = screen.getByTestId('page-404');
+    expect(pageErro).toContainHTML('<h1>Ops! Não encontramos a página</h1>');
   });
 });

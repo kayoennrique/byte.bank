@@ -36,6 +36,7 @@ export default function App() {
             <Transaction carryOutTransaction={carryOutTransaction} />
           )}
           <Outlet />
+          <noscript data-testid = "local">{location.pathname}</noscript>
         </div>
         <Extract transactions={transactions} />
       </main>

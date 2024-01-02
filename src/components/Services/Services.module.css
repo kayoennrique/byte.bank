@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.servicos {
+.services {
   width: 162px;
   height: 137px;
   padding: 8px;
@@ -23,17 +23,17 @@
   cursor: pointer;
 }
 
-.servicos:hover {
+.services:hover {
   border: 2px solid;
   border-color: #47a138;
   background: #e4ede3;
 }
 
-.servicos img {
+.services img {
   margin-bottom: 1rem;
 }
 
-.detalhe__superior {
+.top__detail {
   background-image: url(../../assets/detalhe-sup.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,7 +45,7 @@
   z-index: -1;
 }
 
-.detalhe__inferior {
+.detail__bottom {
   background-image: url(../../assets/detalhe-inf.svg);
   background-repeat: no-repeat;
   background-size: cover;

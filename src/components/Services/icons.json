@@ -1,26 +1,26 @@
 [
   {
-    "services": "Empréstimo",
+    "service": "Empréstimo",
     "image": "/images/icons/emprestimo.svg"
   },
   {
-    "services": "Meus cartões",
+    "service": "Meus cartões",
     "image": "/images/icons/cartao.svg"
   },
   {
-    "services": "Doações",
+    "service": "Doações",
     "image": "/images/icons/doacao.svg"
   },
   {
-    "services": "Pix",
+    "service": "Pix",
     "image": "/images/icons/pix.svg"
   },
   {
-    "services": "Seguros",
+    "service": "Seguros",
     "image": "/images/icons/seguro.svg"
   },
   {
-    "services": "Recarga celular",
+    "service": "Recarga celular",
     "image": "/images/icons/recarga.svg"
   }
 ]

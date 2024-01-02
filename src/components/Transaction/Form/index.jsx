@@ -26,34 +26,38 @@ export default function Form({ carryOutTransaction }) {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h3 className={styles.caption__options}>Nova Transação</h3>
-      <select
-        className={styles.group__options}
-        onChange={handleChange}
-        name="transaction"
-        data-testid="select-options"
-      >
-        <option defaultValue="Selecione um tipo de transação">
-          Selecione um tipo de transação
-        </option>
-        <option value="Depósito">Depósito</option>
-        <option value="Transferência">Transferência</option>
-      </select>
-      <label htmlFor="amount" className={styles.subtitle}>
-        Valor
-      </label>
-      <input
-        onChange={handleChange}
-        className={styles.field__value}
-        type="number"
-        value={amount.amount}
-        name="amount"
-        id="amount"
-        placeholder="Digite um valor"
-      />
-      <button className={styles.button} type="submit">
-        Realizar transação
-      </button>
+      <div>
+        <h3 className={styles.caption__options}>Nova Transação</h3>
+        <select
+          className={styles.group__options}
+          onChange={handleChange}
+          name="transaction"
+          data-testid="select-options"
+        >
+          <option defaultValue="Selecione um tipo de transação">
+            Selecione um tipo de transação
+          </option>
+          <option value="Depósito">Depósito</option>
+          <option value="Transferência">Transferência</option>
+        </select>
+      </div>
+      <div className={styles.areaValue}>
+        <label htmlFor="amount" className={styles.subtitle}>
+          Valor
+        </label>
+        <input
+          onChange={handleChange}
+          className={styles.field__value}
+          type="number"
+          value={amount.amount}
+          name="amount"
+          id="amount"
+          placeholder="Digite um valor"
+        />
+        <button className={styles.button} type="submit">
+          Realizar transação
+        </button>
+      </div>
     </form>
   );
 }

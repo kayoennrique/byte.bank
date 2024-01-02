@@ -4,7 +4,7 @@ html {
   flex-direction: column;
 }
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -17,7 +17,7 @@ body {
   padding: 0;
 }
 
-.container {
+.box {
   margin: 0 auto;
   display: flex;
   margin-top: 1rem;
@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
 }
 
-.wrapper {
+.envelope {
   margin: 0 auto;
   display: flex;
   flex-direction: column;

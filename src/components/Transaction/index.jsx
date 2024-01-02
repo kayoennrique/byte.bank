@@ -5,13 +5,13 @@ import Form from './Form';
 
 export default function Transaction({ carryOutTransaction }) {
   return (
-    <section className={styles.container}>
-      <div className={styles.top__detail} />
+    <section className="container">
+      <div className="top__detail" />
       <div className={styles.wrapper}>
         <Form carryOutTransaction={carryOutTransaction} />
       </div>
-      <Illustration height="229" width="359" />
-      <div className={styles.detail__bottom} />
+      <Illustration height="229" width="459" />
+      <div className="detail__bottom" />
     </section>
   );
 }

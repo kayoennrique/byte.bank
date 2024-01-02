@@ -20,15 +20,11 @@ export default function Main({ balance }) {
     <section className={styles.container}>
       <div className={styles.top__detail} />
       <h1 className={styles.title}>Olá, Kayo :)!</h1>
-      <p className={styles.data}>{`${
+      <p data-testid="current-date" className={styles.data}>{`${
         daysOfTheWeek[today.getDay()]
       }, ${today.toLocaleDateString('pt-BR')}`}</p>
       <div className={styles.wrapper}>
-        <Illustration
-          className={styles.illustration}
-          width="230"
-          height="185"
-        />
+        <Illustration className={styles.illustration} width="250" height="225" />
         <Balance balance={balance} />
       </div>
       <div className={styles.detail__bottom} />

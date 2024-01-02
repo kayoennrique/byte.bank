@@ -1,22 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Menu.module.css';
 
 const listMenu = [
-  'Inicial',
-  'Transferências',
-  'Investments',
-  'Outros serviços',
+  { link: 'Início', href: '/' },
+  { link: 'Cartões', href: '/cards' },
+  { link: 'Serviços', href: '/services' },
+  { link: 'Investimentos', href: '/investiments' },
 ];
 
-export default function Menu() {
+export default function Menu({ path }) {
   return (
     <nav className={styles.menu}>
       {listMenu.map((item, index) => {
         return (
-          <div key={item} className={styles.item}>
-            <a href="/" className={styles.link}>
-              {item}
-            </a>
+          <div key={item.href} className={styles.item}>
+            <Link
+              to={item.href}
+              className={`${styles.link} ${
+                path === item.href && styles.linkActive
+              }`}
+            >
+              {item.link}
+            </Link>
             {index !== listMenu.length - 1 && (
               <div className={styles.divisor} />
             )}

@@ -8,6 +8,13 @@
   z-index: 1;
 }
 
+.areaValue {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  margin-top: 2rem;
+}
+
 .group__options {
   border-radius: 6px;
   padding: 8px;

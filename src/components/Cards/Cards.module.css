@@ -13,7 +13,7 @@
   color: #2f2e41;
 }
 
-.cards {
+.card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.cards > img {
+.card > img {
   width: 267px;
   height: 134px;
 }

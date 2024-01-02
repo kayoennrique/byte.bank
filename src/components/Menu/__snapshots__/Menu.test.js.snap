@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`It should render a list of links and with the link class 1`] = `
+exports[`Deve renderizar os links com a classe link 1`] = `
 Array [
   <a
     class="link false"
-    href="/"
+    href="/home"
   >
     Início
   </a>,
   <a
     class="link false"
-    href="/cards"
+    href="/home/cards"
   >
     Cartões
   </a>,
   <a
     class="link false"
-    href="/services"
+    href="/home/services"
   >
     Serviços
   </a>,
   <a
     class="link false"
-    href="/investiments"
+    href="/home/investiments"
   >
     Investimentos
   </a>,

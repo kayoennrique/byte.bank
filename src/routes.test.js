@@ -5,7 +5,7 @@ import AppRoutes from './routes';
 import Cards from './components/Cards';
 
 describe('Routes', () => {
-  it('Deve renderizar a rota principal', () => {
+  it('Should render the main route', () => {
     render(<App />, { wrapper: BrowserRouter });
     const user = screen.getByText('Olá, Kayo :)!');
     expect(user).toBeInTheDocument();

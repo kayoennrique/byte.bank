@@ -11,7 +11,7 @@ describe('Routes', () => {
     expect(user).toBeInTheDocument();
   });
 
-   it('Should render the Cards route', () => {
+    test('Deve renderizar a rota Cartões', () => {
     const route = '/cards';
     render(
       <MemoryRouter initialEntries={[route]}>

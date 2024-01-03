@@ -32,7 +32,7 @@ export default function Form({ carryOutTransaction }) {
           className={styles.group__options}
           onChange={handleChange}
           name="transaction"
-          data-testid="select-options"
+          data-test="select-options"
         >
           <option defaultValue="Selecione um tipo de transação">
             Selecione um tipo de transação

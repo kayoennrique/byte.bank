@@ -11,4 +11,12 @@ describe('Registration Form', ()=>{
       cy.getByData('button-toSend').click()
       cy.getByData('message-sucess').should('exist').and('have.text', 'Usuário cadastrado com sucesso!')
     })
+
+    it.only('Users should not be allowed to register without the name field filled in', ()=>{
+      cy.getByData('button-register').click()
+      cy.getByData('email-input').type('moni@alura.com')
+      cy.getByData('password-input').type('987654')
+      cy.getByData('button-toSend').click()
+      cy.getByData('message-erro').should('exist').and('have.text', 'O campo de nome é obrigatório')
+    })
   })

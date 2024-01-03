@@ -77,7 +77,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
             alt="pessoa ao lado de um notebook com cadeado"
           />
           {erro.path == 'message-sucess' ? (
-            <span data-test="message-sucesso">{erro.message}</span>
+            <span data-test="message-sucess">{erro.message}</span>
           ) : (
             ''
           )}
@@ -143,7 +143,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 dados conforme descrito na Política de Privacidade do banco.
               </p>
             </div>
-            <Button actionButton="enviar" text="Criar conta" />
+            <Button actionButton="toSend" text="Criar conta" />
           </form>
         </div>
       </div>

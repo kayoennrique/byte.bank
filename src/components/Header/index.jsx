@@ -53,7 +53,7 @@ export default function Header({ path }) {
           <>
             <div className={styles.buttons}>
               <Button
-                actionButton="cadastro"
+                actionButton="register"
                 text="Abrir minha conta"
                 onClick={() => setRegistrationOpen(true)}
               />

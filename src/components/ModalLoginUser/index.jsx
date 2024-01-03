@@ -97,7 +97,7 @@ export default function ModalLoginUser({
                 onChange={(e) => setEmail(e.target.value)}
               />
               {erro.path === 'email' ? (
-                <span data-test="mensagem-erro">{erro.message}</span>
+                <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
               )}
@@ -108,17 +108,17 @@ export default function ModalLoginUser({
                 type="password"
                 id="password"
                 placeholder="Digite sua senha"
-                data-test="senha-input"
+                data-test="password-input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               {erro.path === 'password' ? (
-                <span data-test="mensagem-erro">{erro.message}</span>
+                <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
               )}
             </label>
-            <Button actionButton="enviar" text="Acessar" />
+            <Button actionButton="toSend" text="Acessar" />
           </form>
           <div className={styles.link}>
             <a href="/">Esqueci minha senha!</a>

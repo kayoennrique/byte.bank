@@ -77,7 +77,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
             alt="pessoa ao lado de um notebook com cadeado"
           />
           {erro.path == 'message-sucess' ? (
-            <span data-test="mensagem-sucesso">{erro.message}</span>
+            <span data-test="message-sucesso">{erro.message}</span>
           ) : (
             ''
           )}
@@ -96,7 +96,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 onChange={(event) => setName(event.target.value)}
               />
               {erro.path === 'name' ? (
-                <span data-test="mensagem-erro">{erro.message}</span>
+                <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
               )}
@@ -111,7 +111,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 onChange={(event) => setEmail(event.target.value)}
               />
               {erro.path === 'email' ? (
-                <span data-test="mensagem-erro">{erro.message}</span>
+                <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
               )}
@@ -121,13 +121,13 @@ export default function ModalRegistrationUser({ open, whenClose }) {
               <input
                 type="password"
                 id="password"
-                data-test="senha-input"
+                data-test="password-input"
                 placeholder="Digite sua senha"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
               {erro.path === 'password' ? (
-                <span data-test="mensagem-erro">{erro.message}</span>
+                <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
               )}

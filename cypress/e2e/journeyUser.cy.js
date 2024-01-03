@@ -18,4 +18,26 @@ describe('User Journeys', () => {
       cy.getByData('button-sair').click();
       cy.location('pathname').should('eq', '/');
     });
+
+    it('It must allow the user to register, log in to the application, carry out a transaction and log out', () => {
+      cy.visit('/');
+
+      cy.getByData('button-register').click();
+      cy.getByData('name-input').type('clerian pereira');
+      cy.getByData('email-input').type('clerian@email.com');
+      cy.getByData('password-input').type('456789');
+      cy.getByData('button-toSend').click();
+
+      cy.getByData('message-sucess')
+      .should('exist')
+      .and('have.text', 'Usuário cadastrado com sucesso!');
+      cy.location('pathname').should('eq', '/');
+
+      cy.getByData('button-login').click();
+      cy.getByData('email-input').type('clerian@email.com');
+      cy.getByData('password-input').type('456789');
+      cy.getByData('button-toSend').click();
+  
+      cy.location('pathname').should('eq', '/home');
+    });
 });

@@ -1,4 +1,4 @@
-describe('Testing multiple pages', () => { 
+describe('Testing multiple pages', {browser: 'edge'}, () => { 
   it('You should be able to access the cards page', ()=>{
     cy.visit('/');
     cy.getByData('button-login').click();

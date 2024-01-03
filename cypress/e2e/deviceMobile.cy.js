@@ -41,7 +41,7 @@ describe('Navigation menu burger icon', () => {
         cy.viewport('macbook-13');
       });
   
-      it('Não deve existir um botão menu burguer', () => {
+      it('There should not be a burger menu button', () => {
         cy.visit('/');
   
         cy.getByData('button-login').click();
@@ -54,4 +54,4 @@ describe('Navigation menu burger icon', () => {
         cy.getByData('menu-burguer').should('not.be.visible');
       });
     });
-  });
+});

@@ -41,7 +41,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
           </p>
           <form
             onSubmit={() =>
-              onSubmitRegistration(e, api, whenClose, validateDataForm)
+              onSubmitRegistration(event, api, whenClose, validateDataForm)
             }
             className={styles.modal__form}
           >

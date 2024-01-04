@@ -64,32 +64,17 @@
   background-color: #50bd3f;
 }
 
+
 @media (max-width: 425px) {
-  .form {
+  .form{
     width: 100%;
   }
 }
+
 
 @media (min-width: 425px) and (max-width: 768px) {
   .button {
     font-size: 0.7rem;
     padding: 8px 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .form {
-    height: 50%;
-  }
-
-  .button {
-    font-size: 0.7rem;
-    width: 90%;
-    padding: 8px 0;
-  }
-
-  .field__value {
-    width: 90%;
-    margin-bottom: 1rem;
   }
 }

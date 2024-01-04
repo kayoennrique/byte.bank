@@ -1,64 +1,18 @@
 import Button from 'components/Button';
-import { useState } from 'react';
-import api from 'services/api';
+import api from 'common/services/api';
 import styles from './ModalLoginUser.module.css';
 import illustrationLogin from './assets/ilustracao-login.svg';
-import { validateDataForm } from 'validations/validForm';
+import { validateDataForm } from 'common/validations/validForm';
+import { useModalContext } from 'common/hooks/useModalContext';
+import { ModalContext } from 'common/context/ModalContext';
 
 export default function ModalLoginUser({
   open,
   whenClose,
   whenLogin,
-  saveUserName,
 }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [erro, setErro] = useState({});
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const user = {
-      email,
-      password,
-    };
-
-    const result = await validateDataForm(user);
-    if (!result.valid) {
-      setErro({
-        path: result.path,
-        message: result.message,
-      });
-      return;
-    }
-
-    api
-      .post('/public/login', user)
-      .then((response) => {
-        sessionStorage.setItem('token', response.data.access_token);
-        setEmail('');
-        setPassword('');
-        setErro({
-          path: '',
-          message: '',
-        });
-        whenLogin();
-        const userName = response.data.user.name;
-        saveUserName(userName);
-      })
-      .catch((erro) => {
-        if (erro?.response?.data?.message) {
-          setErro({
-            path: 'message-erro',
-            message: erro.response.data.message,
-          });
-        } else {
-          alert(
-            'Aconteceu um erro inesperado ao efetuar login! Contate o suporte'
-          );
-          whenClose();
-        }
-      });
-  };
+  const { email, password, erro, handleChange, onSubmitLogin } =
+    useModalContext(ModalContext);
 
   if (!open) {
     return <></>;
@@ -84,7 +38,18 @@ export default function ModalLoginUser({
           />
           {erro.path == 'message-erro' ? <span>{erro.message}</span> : ''}
           <p className={styles.modal__description}>Login</p>
-          <form onSubmit={onSubmit} className={styles.modal__form}>
+          <form
+            onSubmit={() =>
+              onSubmitLogin(
+                event,
+                api,
+                whenClose,
+                whenLogin,
+                validateDataForm
+              )
+            }
+            className={styles.modal__form}
+          >
             <label htmlFor="email">
               E-mail
               <input
@@ -94,7 +59,7 @@ export default function ModalLoginUser({
                 data-test="email-input"
                 placeholder="Digite seu email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange}
               />
               {erro.path === 'email' ? (
                 <span data-test="message-erro">{erro.message}</span>
@@ -106,11 +71,12 @@ export default function ModalLoginUser({
               Senha
               <input
                 type="password"
+                name="password"
                 id="password"
                 placeholder="Digite sua senha"
                 data-test="password-input"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
               />
               {erro.path === 'password' ? (
                 <span data-test="message-erro">{erro.message}</span>
@@ -118,7 +84,7 @@ export default function ModalLoginUser({
                 ''
               )}
             </label>
-            <Button actionButton="toSend" text="Acessar" />
+            <Button dataTest="button-toSend" text="Acessar" />
           </form>
           <div className={styles.link}>
             <a href="/">Esqueci minha senha!</a>

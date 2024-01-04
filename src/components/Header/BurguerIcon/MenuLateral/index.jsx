@@ -3,6 +3,7 @@ import styles from './MenuLateral.module.css';
 
 const listMenuLateral = [
   { link: 'Início', href: '/home' },
+  { link: 'Minha conta', href: '/my-account' },
   { link: 'Cartões', href: '/home/cards' },
   { link: 'Serviços', href: '/home/services' },
   { link: 'Investimentos', href: '/home/investiments' },

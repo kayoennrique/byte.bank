@@ -1,5 +1,6 @@
 html {
   display: flex;
+  min-height: 100%;
   flex-direction: column;
 }
 
@@ -9,10 +10,6 @@ body {
   flex: 1;
   flex-direction: column;
   background-color: #e3f9e5;
-}
-
-.page-content {
-  height: 100%;
 }
 
 * {
@@ -35,7 +32,7 @@ body {
   z-index: 0;
 }
 
-.top__detail{
+.top__detail {
   background-image: url(./assets/detalhe-sup.svg);
   background-repeat: no-repeat;
   background-size: cover;

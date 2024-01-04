@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Page404.module.css';
 import space from './404.svg';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
-import { Header, Footer } from 'components';
 
 export default function Page404() {
   return (

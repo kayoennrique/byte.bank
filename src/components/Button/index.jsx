@@ -5,11 +5,11 @@ export default function Button({
   text,
   onClick,
   kind = 'primary',
-  actionButton,
+  dataTest,
 }) {
   return (
     <button
-      data-test={`button-${actionButton}`}
+      data-test={dataTest}
       className={
         kind === 'secondary' ? styles.btn__secondary : styles.btn__primary
       }

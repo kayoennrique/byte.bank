@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import illustrationBanner from 'assets/ilustracao-banner.svg';
 import styles from './Start.module.css';
 import gift from 'assets/presente.svg';

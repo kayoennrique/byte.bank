@@ -1,59 +1,14 @@
 import styles from './ModalRegistrationUser.module.css';
-import { useState } from 'react';
-import api from 'services/api';
+import api from 'common/services/api';
+import { validateDataForm } from 'common/validations/validForm';
 import illustrationRegistration from './assets/ilustracao-cadastro.svg';
 import Button from 'components/Button';
-import { validateDataForm } from 'validations/validForm';
+import { useModalContext } from 'common/hooks/useModalContext';
+import { ModalContext } from 'common/context/ModalContext';
 
 export default function ModalRegistrationUser({ open, whenClose }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [erro, setErro] = useState({});
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const user = {
-      name,
-      email,
-      password,
-    };
-
-    const result = await validateDataForm(user);
-
-    if (!result.valid) {
-      setErro({
-        path: result.path,
-        message: result.message,
-      });
-      return;
-    }
-
-    api
-      .post('/public/cadastrar', user)
-      .then(() => {
-        setErro({
-          path: 'message-sucess',
-          message: 'Usuário cadastrado com sucesso!',
-        });
-        setName('');
-        setEmail('');
-        setPassword('');
-        setTimeout(() => {
-          whenClose();
-          setErro({
-            path: '',
-            message: '',
-          });
-        }, 1000);
-      })
-      .catch((erro) => {
-        setErro({
-          path: 'email',
-          message: erro?.response?.data?.message,
-        });
-      });
-  };
+  const { name, email, password, erro, handleChange, onSubmitRegistration } =
+    useModalContext(ModalContext);
 
   if (!open) {
     return <></>;
@@ -77,23 +32,29 @@ export default function ModalRegistrationUser({ open, whenClose }) {
             alt="pessoa ao lado de um notebook com cadeado"
           />
           {erro.path == 'message-sucess' ? (
-            <span data-test="message-sucess">{erro.message}</span>
+            <span data-test="message-sucesso">{erro.message}</span>
           ) : (
             ''
           )}
           <p className={styles.modal__description}>
             Preencha os campos abaixo para criar sua conta corrente!
           </p>
-          <form onSubmit={onSubmit} className={styles.modal__form}>
+          <form
+            onSubmit={() =>
+              onSubmitRegistration(e, api, whenClose, validateDataForm)
+            }
+            className={styles.modal__form}
+          >
             <label htmlFor="name">
-              Name
+              a
               <input
                 type="text"
                 id="name"
                 data-test="name-input"
                 placeholder="Digite seu nome completo"
+                name="name"
                 value={name}
-                onChange={(event) => setName(event.target.value)}
+                onChange={handleChange}
               />
               {erro.path === 'name' ? (
                 <span data-test="message-erro">{erro.message}</span>
@@ -107,8 +68,9 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 type="email"
                 data-test="email-input"
                 placeholder="Digite seu email"
+                name="email"
                 value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={handleChange}
               />
               {erro.path === 'email' ? (
                 <span data-test="message-erro">{erro.message}</span>
@@ -123,8 +85,9 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 id="password"
                 data-test="password-input"
                 placeholder="Digite sua senha"
+                name="password"
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={handleChange}
               />
               {erro.path === 'password' ? (
                 <span data-test="message-erro">{erro.message}</span>
@@ -143,7 +106,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 dados conforme descrito na Política de Privacidade do banco.
               </p>
             </div>
-            <Button actionButton="toSend" text="Criar conta" />
+            <Button dataTest="button-toSend" text="Criar conta" />
           </form>
         </div>
       </div>

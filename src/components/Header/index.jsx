@@ -1,49 +1,26 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-import {
-  ModalRegistrationUser,
-  ModalLoginUser,
-  Button,
-  BurguerIcon,
-  MenuLateral,
-} from 'components';
-
 import { ReactComponent as Logo } from 'assets/bytebank.svg';
+import ModalRegistrationUser from 'components/ModalRegistrationUser';
+import ModalLoginUser from 'components/ModalLoginUser';
+import Button from 'components/Button';
 import avatarUser from 'assets/avatar.svg';
 import styles from './Header.module.css';
+import BurguerIcon from 'components/Header/BurguerIcon';
+import MenuLateral from './BurguerIcon/MenuLateral';
+import { useHeaderContext } from 'common/hooks/useHeaderContext';
 
 export default function Header({ path }) {
-  const [modalRegistrationOpen, setRegistrationOpen] = useState(false);
-  const [modalLoginOpen, setModalLoginOpen] = useState(false);
-  const [burguerOpen, setBurguerOpen] = useState(false);
-  const [userName, setUserName] = useState('');
-
-  let navigate = useNavigate();
-
-  const token = sessionStorage.getItem('token');
-
-  const [userIsLogged, setUserIsLogged] = useState(token != null);
-
-  const toggleHamburguer = () => {
-    setBurguerOpen(!burguerOpen);
-  };
-
-  const whenLogin = () => {
-    setModalLoginOpen(false);
-    setUserIsLogged(true);
-    navigate('/home');
-  };
-
-  const whenLoggingOut = () => {
-    setUserIsLogged(false);
-    sessionStorage.removeItem('token');
-    navigate('/');
-  };
-
-  const saveUserName = (userName) => {
-    setUserName(userName);
-  };
+  const {
+    userIsLogged,
+    setRegistrationOpen,
+    setModalLoginOpen,
+    burguerOpen,
+    modalRegistrationOpen,
+    modalLoginOpen,
+    userName,
+    toggleHamburguer,
+    whenLogin,
+    whenLoggingOut,
+  } = useHeaderContext();
 
   return (
     <header className={styles.header}>
@@ -53,7 +30,7 @@ export default function Header({ path }) {
           <>
             <div className={styles.buttons}>
               <Button
-                actionButton="register"
+                dataTest="button-registration"
                 text="Abrir minha conta"
                 onClick={() => setRegistrationOpen(true)}
               />
@@ -62,16 +39,15 @@ export default function Header({ path }) {
                 whenClose={() => setRegistrationOpen(false)}
               />
               <Button
-                actionButton="login"
+                dataTest="button-login"
                 text="Já tenho conta"
-                kind="secondary"
+                kinf="secondary"
                 onClick={() => setModalLoginOpen(true)}
               />
               <ModalLoginUser
                 open={modalLoginOpen}
                 whenClose={() => setModalLoginOpen(false)}
                 whenLogin={whenLogin}
-                saveUserName={saveUserName}
               />
             </div>
           </>
@@ -82,12 +58,12 @@ export default function Header({ path }) {
               <p>{`Olá, ${userName}`}</p>
               <img src={avatarUser} alt="Ícone de um avatar de usuário" />
               <Button
-                actionButton="sair"
+                dataTest="button-sair"
                 text="Sair"
                 onClick={() => whenLoggingOut()}
               />
             </div>
-            <div className={styles.hamburguerIcon} onClick={toggleHamburguer}>
+            {/* <div className={styles.hamburguerIcon} onClick={toggleHamburguer}>
               <BurguerIcon />
               {burguerOpen && (
                 <MenuLateral
@@ -96,7 +72,7 @@ export default function Header({ path }) {
                   whenLoggingOut={whenLoggingOut}
                 />
               )}
-            </div>
+            </div> */}
           </div>
         )}
       </div>

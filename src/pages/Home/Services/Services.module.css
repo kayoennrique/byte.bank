@@ -34,7 +34,7 @@
 }
 
 .top__detail {
-  background-image: url(../../assets/detalhe-sup.svg);
+  background-image: url(../../../assets/detalhe-sup.svg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 200px;
@@ -46,7 +46,7 @@
 }
 
 .detail__bottom {
-  background-image: url(../../assets/detalhe-inf.svg);
+  background-image: url(../../../assets/detalhe-inf.svg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 200px;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Form.module.css';
 
 export default function Form({ carryOutTransaction }) {
-  const [amount, setAmount] = useState({ transaction: '', amount: '' });
+  const [amount, setAmount] = useState({ typeTransaction: '', amount: '' });
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -31,7 +31,8 @@ export default function Form({ carryOutTransaction }) {
         <select
           className={styles.group__options}
           onChange={handleChange}
-          name="transaction"
+          name="typeTransaction"
+          data-testid="select-options"
           data-test="select-options"
         >
           <option defaultValue="Selecione um tipo de transação">
@@ -52,13 +53,13 @@ export default function Form({ carryOutTransaction }) {
           value={amount.amount}
           name="amount"
           id="amount"
-          data-test="form-input"
           placeholder="Digite um valor"
+          data-test="form-input"
         />
         <button
           className={styles.button}
-          type="submit"
           data-test="perform-transaction"
+          type="submit"
         >
           Realizar transação
         </button>

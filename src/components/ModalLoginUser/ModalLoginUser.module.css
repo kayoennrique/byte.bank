@@ -165,39 +165,3 @@
     color: #000000;
   }
 }
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .window__modal {
-    padding: 24px;
-    height: 90%;
-  }
-
-  .modal__description {
-    font-size: 12px;
-    padding: 10px 0;
-  }
-
-  .modal__container img {
-    width: 40%;
-    height: 40%;
-  }
-
-  .modal__form {
-    gap: 16px;
-    width: 90%;
-  }
-
-  .modal__form label {
-    font-size: 12px;
-  }
-
-  .modal__form input {
-    padding: 8px;
-  }
-
-  .modal__form span {
-    font-size: 0.5rem;
-    padding: 0.3rem 0 0 0.3rem;
-    color: red;
-  }
-}

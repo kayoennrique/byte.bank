@@ -4,6 +4,7 @@ import styles from './Menu.module.css';
 
 const listMenu = [
   { link: 'Início', href: '/home' },
+  { link: 'Minha conta', href: '/my-account' },
   { link: 'Cartões', href: '/home/cards' },
   { link: 'Serviços', href: '/home/services' },
   { link: 'Investimentos', href: '/home/investiments' },

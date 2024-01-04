@@ -1,24 +1,15 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { Extract, Menu, Main, Transaction } from 'components';
-import { calculateNewBalance } from 'utils';
-import { saveTransaction } from 'services/transactions';
-import { updateBalance } from 'services/balance';
-import useListTransactions from 'hooks/useListTransactions';
-import useBalance from 'hooks/useBalance';
 import styles from './App.module.css';
 
-export default function Home() {
-  const [balance, setBalance] = useBalance();
-  const [transactions, setTransactions] = useListTransactions();
-  const location = useLocation();
+import Extract from './Extract';
+import Menu from 'pages/Home/Menu';
+import Main from './Main';
+import NewTransaction from './NewTransaction';
+import { useHomeContext } from 'common/hooks/useHomeContext';
 
-  function carryOutTransaction(values) {
-    const newBalance = calculateNewBalance(values, balance);
-    setBalance(newBalance);
-    updateBalance(newBalance);
-    setTransactions([...transactions, values]);
-    saveTransaction(values);
-  }
+export default function Home() {
+  const { balance, transactions, carryOutTransaction } = useHomeContext();
+  const location = useLocation();
 
   return (
     <>
@@ -27,10 +18,12 @@ export default function Home() {
         <div className={styles.envelope}>
           <Main balance={balance} />
           {location.pathname === '/home' && (
-            <Transaction carryOutTransaction={carryOutTransaction} />
+            <NewTransaction carryOutTransaction={carryOutTransaction} />
           )}
           <Outlet />
-          <noscript data-testid="local">{location.pathname}</noscript>
+          <noscript data-testid="location-pathname">
+            {location.pathname}
+          </noscript>
         </div>
         <Extract transactions={transactions} />
       </main>

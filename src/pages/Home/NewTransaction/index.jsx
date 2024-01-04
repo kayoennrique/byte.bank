@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Transaction.module.css';
-import { ReactComponent as Illustration } from './ilustration.svg';
+import { ReactComponent as Illustration } from './ilustracao.svg';
 import Form from './Form';
 
 export default function Transaction({ carryOutTransaction }) {

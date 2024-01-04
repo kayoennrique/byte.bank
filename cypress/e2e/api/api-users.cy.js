@@ -30,4 +30,26 @@ describe('Making requests to the API', () => {
         });
       });
     });
-});
+  
+    context('Intercepting network requests', () => {
+      it('You must intercept the POST users/login', () => {
+        cy.intercept('POST', 'users/login').as('loginRequest');
+        cy.login('kayo.ennrique@hotmail.com.br', '123456');
+        cy.wait('@loginRequest').then((interception) => {
+          interception.response = {
+            statusCode: 200,
+            body: {
+              sucess: true,
+              message: 'Login bem sucedido!',
+            },
+          };
+        });
+        cy.visit('/home');
+  
+        cy.getByData('title-welcome').should(
+          'contain.text',
+          'Bem vindo de volta!'
+        );
+      });
+    });
+  });

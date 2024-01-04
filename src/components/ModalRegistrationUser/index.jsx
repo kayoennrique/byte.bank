@@ -46,7 +46,6 @@ export default function ModalRegistrationUser({ open, whenClose }) {
             className={styles.modal__form}
           >
             <label htmlFor="name">
-              a
               <input
                 type="text"
                 id="name"

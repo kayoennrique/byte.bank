@@ -8,13 +8,13 @@ import BurguerIcon from 'components/Header/BurguerIcon';
 import MenuLateral from './BurguerIcon/MenuLateral';
 import { useHeaderContext } from 'common/hooks/useHeaderContext';
 
-export default function Header({ path }) {
+export default function Head({ path }) {
   const {
     userIsLogged,
-    setRegistrationOpen,
+    setModalOpenRegistration,
     setModalLoginOpen,
     burguerOpen,
-    modalRegistrationOpen,
+    modalOpenRegistration,
     modalLoginOpen,
     userName,
     toggleHamburguer,
@@ -30,18 +30,18 @@ export default function Header({ path }) {
           <>
             <div className={styles.buttons}>
               <Button
-                dataTest="button-registration"
+                dataTest="button-register"
                 text="Abrir minha conta"
-                onClick={() => setRegistrationOpen(true)}
+                onClick={() => setModalOpenRegistration(true)}
               />
               <ModalRegistrationUser
-                open={modalRegistrationOpen}
-                whenClose={() => setRegistrationOpen(false)}
+                open={modalOpenRegistration}
+                whenClose={() => setModalOpenRegistration(false)}
               />
               <Button
                 dataTest="button-login"
                 text="Já tenho conta"
-                kinf="secondary"
+                kind="secondary"
                 onClick={() => setModalLoginOpen(true)}
               />
               <ModalLoginUser
@@ -63,7 +63,7 @@ export default function Header({ path }) {
                 onClick={() => whenLoggingOut()}
               />
             </div>
-            {/* <div className={styles.hamburguerIcon} onClick={toggleHamburguer}>
+            <div className={styles.hamburguerIcon} onClick={toggleHamburguer}>
               <BurguerIcon />
               {burguerOpen && (
                 <MenuLateral
@@ -72,7 +72,7 @@ export default function Header({ path }) {
                   whenLoggingOut={whenLoggingOut}
                 />
               )}
-            </div> */}
+            </div>
           </div>
         )}
       </div>

@@ -52,4 +52,4 @@ describe('Making requests to the API', () => {
         );
       });
     });
-  });
+});

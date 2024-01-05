@@ -1,4 +1,4 @@
-name: Tests
+name: Testes
 
 on:
   pull_request:
@@ -21,8 +21,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
 
-      - name: Tests
+      - name: Testes
         run: npm test
 
-      - name: Test Coverage Monitor
+      - name: Monitor de cobertura de testes
         run: npm run test:coverage

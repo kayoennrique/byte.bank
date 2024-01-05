@@ -8,10 +8,9 @@ import Services from './pages/Home/Services';
 import Start from 'pages/Start';
 import Page404 from 'pages/Page404';
 import { HomeProvider } from 'common/context/HomeContext';
-
+import { HeadProvider } from 'common/context/HeaderContext';
 import { ModalProvider } from 'common/context/ModalContext';
 import { MyAccount } from 'pages/MyAccount';
-import { HeadProvider } from 'common/context/HeaderContext';
 
 export default function AppRoutes() {
   return (

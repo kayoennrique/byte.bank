@@ -8,7 +8,7 @@ import { useModalContext } from 'common/hooks/useModalContext';
 import { ModalContext } from 'common/context/ModalContext';
 
 export const FormAccount = () => {
-  const { name, email, password, erro, handleChange, onSubmitUpdateUser } =
+  const { nome, email, senha, erro, handleChange, onSubmitUpdateUser } =
     useModalContext(ModalContext);
 
   const navigate = useNavigate();
@@ -35,15 +35,15 @@ export const FormAccount = () => {
           }
           className={styles.form}
         >
-          <label htmlFor="name">Nome</label>
+          <label htmlFor="nome">Nome</label>
           <input
             type="text"
-            name="name"
-            value={name}
+            name="nome"
+            value={nome}
             placeholder="Kayo Ennrique"
             onChange={handleChange}
           />
-          {erro.path === 'name' ? (
+          {erro.path === 'nome' ? (
             <span data-test="message-erro">{erro.message}</span>
           ) : (
             ''
@@ -52,7 +52,7 @@ export const FormAccount = () => {
           <input
             type="text"
             name="password"
-            value={password}
+            value={senha}
             placeholder="kayo123"
             onChange={handleChange}
           />
@@ -63,7 +63,7 @@ export const FormAccount = () => {
           )}
           <button
             type="submit"
-            disabled={name === '' || password === '' ? true : false}
+            disabled={nome === '' || senha === '' ? true : false}
             data-test="save-changes-button"
             className={styles.button}
           >

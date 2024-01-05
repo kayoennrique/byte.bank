@@ -14,7 +14,7 @@ export default function Start() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.banner}>
-            <h1 data-test="main-title">
+            <h1 data-test="titulo-principal">
               Experimente mais liberdade no controle da sua vida financeira.
               Crie sua conta com a gente!
             </h1>

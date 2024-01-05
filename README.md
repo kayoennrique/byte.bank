@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Bytebank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bytebank is a digital banking startup created for developers. It is currently in the development phase and as new features are added, new tests need to be done, so we will write and improve the existing end-to-end tests in the application using Cypress.
 
-## Available Scripts
+<img src="screen.png" alt="Bytebank Image" width="50%">
 
-In the project directory, you can run:
 
-### `npm start`
+## 🔨 Project features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is at an advanced stage, having some pages and different screens such as:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Home page
+- Home Page
+  - Cards Screen
+  - Services screen
+  - Investments Screen
+- Page 404
+- My account page
 
-### `npm test`
+You can find the [Figma for this application here](https://www.figma.com/file/YJydxY5H8gf5lPLyKWOBbY?embed_host=notion&kind=&node-id=80%3A199&t=rKQJYFpJUumrCTx1-1&viewer=1).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✔️ Techniques and technologies used
 
-### `npm run build`
+Check out this list of everything we will use in this course:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `React`
+- `Create React App`
+- `Cypress`
+- `Axios`
+- `Faker.js`
+- `GitHub`
+- `Figma`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+And much more!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Open and run the project
 
-### `npm run eject`
+To open and run the project, run `npm install` to install the dependencies and `npm start` to start the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Then, access <a href="http://localhost:3000/">http://localhost:3000/</a> in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 More course information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Bytebank is a fictitious Start-up used in this Alura course.
+The main idea of ​​this course is to show how to write and improve end-to-end tests using the Cypress tool.

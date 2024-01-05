@@ -8,7 +8,7 @@ import BurguerIcon from 'components/Header/BurguerIcon';
 import MenuLateral from './BurguerIcon/MenuLateral';
 import { useHeaderContext } from 'common/hooks/useHeaderContext';
 
-export default function Head({ path }) {
+export default function Header({ path }) {
   const {
     userIsLogged,
     setModalOpenRegistration,
@@ -30,7 +30,7 @@ export default function Head({ path }) {
           <>
             <div className={styles.buttons}>
               <Button
-                dataTest="button-register"
+                dataTest="botao-cadastro"
                 text="Abrir minha conta"
                 onClick={() => setModalOpenRegistration(true)}
               />
@@ -39,7 +39,7 @@ export default function Head({ path }) {
                 whenClose={() => setModalOpenRegistration(false)}
               />
               <Button
-                dataTest="button-login"
+                dataTest="botao-login"
                 text="Já tenho conta"
                 kind="secondary"
                 onClick={() => setModalLoginOpen(true)}
@@ -58,7 +58,7 @@ export default function Head({ path }) {
               <p>{`Olá, ${userName}`}</p>
               <img src={avatarUser} alt="Ícone de um avatar de usuário" />
               <Button
-                dataTest="button-sair"
+                dataTest="botao-sair"
                 text="Sair"
                 onClick={() => whenLoggingOut()}
               />

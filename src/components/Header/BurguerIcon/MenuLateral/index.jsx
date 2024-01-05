@@ -17,12 +17,12 @@ export default function MenuLateral({
   return (
     <nav data-test="menu-lateral" className={styles.menu}>
       <button
-        className={styles.close__modal}
+        className={styles.fechar__modal}
         onClick={() => toggleHamburguer()}
       >
         X
       </button>
-      {listMenuLateral.map((item, index) => {
+      {listMenuLateral.map((item, indice) => {
         return (
           <div key={item.href} className={styles.item}>
             <Link
@@ -33,7 +33,7 @@ export default function MenuLateral({
             >
               {item.link}
             </Link>
-            {index !== listMenuLateral.length - 1 && (
+            {indice !== listMenuLateral.length - 1 && (
               <div className={styles.divisor} />
             )}
           </div>

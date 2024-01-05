@@ -1,18 +1,14 @@
-Cypress.Commands.add('getByData', (selector) => {
-    return cy.get(`[data-test=${selector}]`);
+Cypress.Commands.add('getByData', (seletor) => {
+  return cy.get(`[data-test=${seletor}]`);
 });
 
-Cypress.Commands.add('login', (email, password) => {
-  cy.session([email,password], () => {
-    cy.visit('/')
-    cy.getByData('button-login').click();
+Cypress.Commands.add('login', (email, senha) => {
+  cy.session([email, senha], () => {
+    cy.visit('/');
+    cy.getByData('botao-login').click();
     cy.getByData('email-input').type(email);
-    cy.getByData('password-input').type(password);
-    cy.getByData('button-toSend').click();
+    cy.getByData('senha-input').type(senha);
+    cy.getByData('botao-enviar').click();
     cy.url().should('contain', '/home');
   });
-});
-
-Cypress.Commands.add('checkText', (selector, text) => {
-   cy.get(`${selector}`).contains(`${text}`)
 });

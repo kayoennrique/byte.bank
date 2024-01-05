@@ -2,19 +2,19 @@ import { ModalContext } from 'common/context/ModalContext';
 import { useContext } from 'react';
 
 export const useModalContext = () => {
-  const { name, setName, email, setEmail, password, setPassword, erro, setErro } =
+  const { nome, setName, email, setEmail, senha, setPassword, erro, setErro } =
     useContext(ModalContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
-      case 'name':
+      case 'nome':
         setName(value);
         break;
       case 'email':
         setEmail(value);
         break;
-      case 'password':
+      case 'senha':
         setPassword(value);
         break;
       default:
@@ -30,9 +30,9 @@ export const useModalContext = () => {
   ) => {
     e.preventDefault();
     const user = {
-      name,
+      nome,
       email,
-      password,
+      senha,
     };
 
     const result = await validateDataForm(user);
@@ -81,7 +81,7 @@ export const useModalContext = () => {
     e.preventDefault();
     const user = {
       email,
-      password,
+      senha,
     };
 
     const result = await validateDataForm(user);
@@ -98,7 +98,7 @@ export const useModalContext = () => {
       .then((response) => {
         sessionStorage.setItem('token', response.data.access_token);
         localStorage.setItem('userId', response.data.user.id);
-        localStorage.setItem('userName', response.data.user.name);
+        localStorage.setItem('userName', response.data.user.nome);
         setEmail('');
         setPassword('');
         setErro({
@@ -131,9 +131,9 @@ export const useModalContext = () => {
   ) => {
     e.preventDefault();
     const user = {
-      name,
+      nome,
       email,
-      password,
+      senha,
     };
 
     const result = await validateDataForm(user);
@@ -149,7 +149,7 @@ export const useModalContext = () => {
     api
       .put(`/users/${userId}`, user)
       .then(() => {
-        localStorage.setItem('userName', name);
+        localStorage.setItem('userName', nome);
         alert('Alterações salvas com sucesso!');
         setErro({
           path: 'message-sucess',
@@ -175,11 +175,11 @@ export const useModalContext = () => {
   };
 
   return {
-    name,
+    nome,
     setName,
     email,
     setEmail,
-    password,
+    senha,
     setPassword,
     erro,
     setErro,

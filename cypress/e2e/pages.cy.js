@@ -1,10 +1,10 @@
 describe('Testing multiple pages', {browser: 'edge'}, () => { 
   it('You should be able to access the cards page', ()=>{
     cy.visit('/');
-    cy.getByData('button-login').click();
+    cy.getByData('botao-login').click();
     cy.getByData('email-input').type('kayo.ennrique@hotmail.com.br');
-    cy.getByData('password-input').type('123456');
-    cy.getByData('button-toSend').click();
+    cy.getByData('senha-input').type('123456');
+    cy.getByData('botao-enviar').click();
 
     cy.location('pathname').should('eq','/home');
 

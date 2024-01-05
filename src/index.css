@@ -32,7 +32,7 @@ body {
   z-index: 0;
 }
 
-.top__detail {
+.detalhe__superior {
   background-image: url(./assets/detalhe-sup.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +44,7 @@ body {
   z-index: -1;
 }
 
-.detail__bottom {
+.detalhe__inferior {
   background-image: url(./assets/detalhe-inf.svg);
   background-repeat: no-repeat;
   background-size: cover;

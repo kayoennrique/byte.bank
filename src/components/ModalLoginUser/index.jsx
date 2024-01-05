@@ -11,7 +11,7 @@ export default function ModalLoginUser({
   whenClose,
   whenLogin,
 }) {
-  const { email, password, erro, handleChange, onSubmitLogin } =
+  const { email, senha, erro, handleChange, onSubmitLogin } =
     useModalContext(ModalContext);
 
   if (!open) {
@@ -62,29 +62,29 @@ export default function ModalLoginUser({
                 onChange={handleChange}
               />
               {erro.path === 'email' ? (
-                <span data-test="message-erro">{erro.message}</span>
+                <span data-test="mensagem-erro">{erro.message}</span>
               ) : (
                 ''
               )}
             </label>
-            <label htmlFor="password">
+            <label htmlFor="senha">
               Senha
               <input
                 type="password"
-                name="password"
-                id="password"
+                name="senha"
+                id="senha"
                 placeholder="Digite sua senha"
-                data-test="password-input"
-                value={password}
+                data-test="senha-input"
+                value={senha}
                 onChange={handleChange}
               />
-              {erro.path === 'password' ? (
-                <span data-test="message-erro">{erro.message}</span>
+              {erro.path === 'senha' ? (
+                <span data-test="mensagem-erro">{erro.message}</span>
               ) : (
                 ''
               )}
             </label>
-            <Button dataTest="button-toSend" text="Acessar" />
+            <Button dataTest="botao-enviar" text="Acessar" />
           </form>
           <div className={styles.link}>
             <a href="/">Esqueci minha senha!</a>

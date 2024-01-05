@@ -19,7 +19,7 @@ export default function Main({ balance }) {
   return (
     <section className={styles.container}>
       <div className={styles.top__detail} />
-      <h1 data-test="title-welcome" className={styles.title}>
+      <h1 data-test="titulo-boas-vindas" className={styles.title}>
         Bem vindo de volta!
       </h1>
       <p data-testid="current-date" className={styles.data}>{`${

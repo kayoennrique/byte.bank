@@ -7,7 +7,7 @@ import { useModalContext } from 'common/hooks/useModalContext';
 import { ModalContext } from 'common/context/ModalContext';
 
 export default function ModalRegistrationUser({ open, whenClose }) {
-  const { name, email, password, erro, handleChange, onSubmitRegistration } =
+  const { nome, email, senha, erro, handleChange, onSubmitRegistration } =
     useModalContext(ModalContext);
 
   if (!open) {
@@ -32,7 +32,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
             alt="pessoa ao lado de um notebook com cadeado"
           />
           {erro.path == 'message-sucess' ? (
-            <span data-test="message-sucesso">{erro.message}</span>
+            <span data-test="message-sucess">{erro.message}</span>
           ) : (
             ''
           )}
@@ -45,17 +45,18 @@ export default function ModalRegistrationUser({ open, whenClose }) {
             }
             className={styles.modal__form}
           >
-            <label htmlFor="name">
+            <label htmlFor="nome">
+              Nome
               <input
                 type="text"
-                id="name"
-                data-test="name-input"
+                id="nome"
+                data-test="nome-input"
                 placeholder="Digite seu nome completo"
-                name="name"
-                value={name}
+                name="nome"
+                value={nome}
                 onChange={handleChange}
               />
-              {erro.path === 'name' ? (
+              {erro.path === 'nome' ? (
                 <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
@@ -77,18 +78,18 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 ''
               )}
             </label>
-            <label htmlFor="password">
+            <label htmlFor="senha">
               Senha
               <input
                 type="password"
-                id="password"
-                data-test="password-input"
+                id="senha"
+                data-test="senha-input"
                 placeholder="Digite sua senha"
-                name="password"
-                value={password}
+                name="senha"
+                value={senha}
                 onChange={handleChange}
               />
-              {erro.path === 'password' ? (
+              {erro.path === 'senha' ? (
                 <span data-test="message-erro">{erro.message}</span>
               ) : (
                 ''
@@ -105,7 +106,7 @@ export default function ModalRegistrationUser({ open, whenClose }) {
                 dados conforme descrito na Política de Privacidade do banco.
               </p>
             </div>
-            <Button dataTest="button-toSend" text="Criar conta" />
+            <Button dataTest="botao-enviar" text="Criar conta" />
           </form>
         </div>
       </div>

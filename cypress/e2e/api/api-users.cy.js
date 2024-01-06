@@ -15,7 +15,7 @@ describe('Making requests to the API', () => {
         url: 'http://localhost:8000/users/40a41438-84a6-4b4d-ae1d-7f1713d0a9fe',
       }).then((response) => {
         expect(response.status).to.eq(200);
-        expect(response.body).to.have.property('name');
+        expect(response.body).to.have.property('nome');
       });
     });
 
@@ -50,6 +50,21 @@ describe('Making requests to the API', () => {
         'contain.text',
         'Bem vindo de volta!'
       );
+    });
+  });
+
+  context('Logging in via API', () => {
+    it('Must allow user login Kayo Ennrique', () => {
+      cy.request({
+        method: 'POST',
+        url: 'http://localhost:8000/users/login',
+        body: Cypress.env(),
+      }).then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.body).is.not.empty;
+        expect(response.body.user).to.have.property('nome');
+        expect(response.body.user.nome).to.be.equal('Kayo Ennrique');
+      });
     });
   });
 });

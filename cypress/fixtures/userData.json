@@ -1,0 +1,44 @@
+{
+    "id": "40a41438-84a6-4b4d-ae1d-7f1713d0a9fe",
+    "nome": "Kayo Ennrique",
+    "email": "kayo.ennrique@hotmail.com.br",
+    "senha": "123456",
+    "transactions": [
+      {
+        "id": "788f434b-11ee-451d-b968-02d203bfc81a",
+        "typeTransaction": "Depósito",
+        "amount": "100",
+        "data": "16/02/2023",
+        "month": "Fevereiro"
+      },
+      {
+        "id": "745fed04-dd02-4e45-821e-166f524d1fb2",
+        "typeTransaction": "Depósito",
+        "amount": "500",
+        "data": "17/02/2023",
+        "month": "Fevereiro"
+      },
+      {
+        "id": "78c5d8c3-6f46-41d1-9152-7c2474bcd473",
+        "typeTransaction": "Transferência",
+        "amount": "360",
+        "data": "17/02/2023",
+        "month": "Fevereiro"
+      },
+      {
+        "id": "70eeaa13-cef8-4ad6-aa00-7dce77567748",
+        "typeTransaction": "Depósito",
+        "amount": "200",
+        "data": "01/03/2023",
+        "month": "Março"
+      },
+      {
+        "id": "69dabd2b-a049-4897-b6db-c3ae7e7c7c3e",
+        "typeTransaction": "Depósito",
+        "amount": "500",
+        "data": "11/04/2023",
+        "month": "Abril"
+      }
+    ],
+    "balance": 2840
+  }

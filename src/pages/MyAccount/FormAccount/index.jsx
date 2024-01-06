@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './FormAccount.module.css';
-import illustration from 'assets/ilustracao-minha-conta.svg';
-import { validateDataForm } from 'common/validations/validForm';
+import illustration  from 'assets/ilustracao-minha-conta.svg';
+import { validateDataForm  } from 'common/validations/validForm';
 import api from 'common/services/api';
 import { useNavigate } from 'react-router-dom';
 import { useModalContext } from 'common/hooks/useModalContext';
@@ -16,11 +16,11 @@ export const FormAccount = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.top__detail} />
+      <div className={styles.detalhe__superior} />
       <h1>Minha conta</h1>
       <div className={styles.envelope}>
         <img
-          src={illustration}
+          src={illustration }
           alt="Ilustração de personagem fazendo alterações em um quadro"
         />
         <form
@@ -29,7 +29,7 @@ export const FormAccount = () => {
               event,
               navigate,
               api,
-              validateDataForm,
+              validateDataForm ,
               userId
             )
           }
@@ -48,15 +48,15 @@ export const FormAccount = () => {
           ) : (
             ''
           )}
-          <label htmlFor="password">Senha</label>
+          <label htmlFor="senha">Senha</label>
           <input
             type="text"
-            name="password"
+            name="senha"
             value={senha}
-            placeholder="kayo123"
+            placeholder="654321"
             onChange={handleChange}
           />
-          {erro.path === 'password' ? (
+          {erro.path === 'senha' ? (
             <span data-test="message-erro">{erro.message}</span>
           ) : (
             ''
@@ -64,7 +64,7 @@ export const FormAccount = () => {
           <button
             type="submit"
             disabled={nome === '' || senha === '' ? true : false}
-            data-test="save-changes-button"
+            data-test="botao-salvar-alteracoes"
             className={styles.button}
           >
             Salvar alterações

@@ -1,17 +1,19 @@
 import api from './api';
 
 export async function searchBalance() {
+  const userId = localStorage.getItem('userId');
   try {
-    const resp = await api.get('/balance');
-    return resp.data.amount;
+    const resp = await api.get(`/users/${userId}/balance`);
+    return resp.data;
   } catch (err) {
     return 1000;
   }
 }
 
 export async function updateBalance(newBalance) {
+  const userId = localStorage.getItem('userId');
   api
-    .put('/balance', { amount: newBalance })
+    .put(`/users/${userId}/balance`, { balance: newBalance })
     .then((resp) => console.log(resp.status))
     .catch((err) => console.log(err));
 }
